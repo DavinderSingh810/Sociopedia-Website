@@ -22,7 +22,7 @@ import {
     const main = palette.neutral.main;
   
     const getUser = async () => {
-      const response = await fetch(`https://sociopedia-com.onrender.com/users/${userId}`, {
+      const response = await fetch(`https://social-website-sjzg.onrender.com/users/${userId}`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
