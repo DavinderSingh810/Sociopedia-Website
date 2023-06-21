@@ -30,7 +30,12 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb" }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: false }));
-app.use(cors({ origin: "https://snazzy-dieffenbachia-eac30e.netlify.app/" }));
+
+app.use(cors({
+  origin: "https://snazzy-dieffenbachia-eac30e.netlify.app/",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use("/assets", express.static(path.join(__dirname, "/public/assets")));
 
 /* FILE STORAGE */
